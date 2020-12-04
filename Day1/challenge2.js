@@ -8,12 +8,12 @@ const n = data.length
 
 data.forEach((val, current) => {
   const finding = 2020 - val
-  let [start, end] = [0, n-1]
+  let [start, end] = [current+1, n-1]
   while(data[start] + data[end] !== finding && start < end){
     let sum = data[start] + data[end]
-    if(sum > finding || end === current)
+    if(sum > finding)
       end--;
-    if(sum < finding || start === current)
+    if(sum < finding)
       start++;
   }
 
