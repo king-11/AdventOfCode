@@ -1,0 +1,8 @@
+{
+  "name": "AdventOfCode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:king-11/AdventOfCode.git",
+  "author": "Lakshya Singh <lakshay.singh1108@gmail.com>",
+  "license": "MIT"
+}
