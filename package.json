@@ -1,8 +1,19 @@
 {
-  "name": "AdventOfCode",
+  "name": "adventofcode",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:king-11/AdventOfCode.git",
   "author": "Lakshya Singh <lakshay.singh1108@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "ts-node": "^9.1.0",
+    "typescript": "^4.1.2"
+  },
+  "keywords": [
+    "Advent of Code",
+    "December",
+    "Start",
+    "2020"
+  ]
 }
