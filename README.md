@@ -1,4 +1,4 @@
-# Advent of Code 
+# Advent of Code
 
 ## About
 
@@ -24,3 +24,12 @@ Advent of Code is a registered trademark in the United States.
 - Day 4
   - [Challenge 1](Day4/ans1.js)
   - [Challenge 2](Day4/ans2.js)
+- Day 5
+  - [Challenge 1](Day5/ans1.js)
+  - [Challenge 2](Day5/ans2.js)
+- Day 6
+  - [Challenge 1](Day6/ans1.js)
+  - [Challenge 2](Day6/ans2.js)
+- Day 7
+  - [Challenge 1](Day7/ans1.js)
+  - [Challenge 2](Day7/ans2.js)
