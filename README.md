@@ -33,9 +33,9 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 6: Custom Customs](https://github.com/king-11/AdventOfCode/tree/master/Day6)| 🌟 | 🌟 |
 | ✔ [Day 7: Handy Haversacks](https://github.com/king-11/AdventOfCode/tree/master/Day7)| 🌟 | 🌟 |
 | ✔ [Day 8: Handheld Halting](https://github.com/king-11/AdventOfCode/tree/master/Day8)| 🌟 | 🌟 |
-| [Day 9: Encoding Error]()| | |
-| [Day 10: TBD]()| | |
-| [Day 11: TBD]()| | |
+| ✔ [Day 9: Encoding Error](https://github.com/king-11/AdventOfCode/tree/master/Day9)| 🌟 | 🌟 |
+| [Day 10: Adapter Array]()| | |
+| [Day 11: Seating System]()| | |
 | [Day 12: TBD]()| | |
 | [Day 13: TBD]()| | |
 | [Day 14: TBD]()| | |
