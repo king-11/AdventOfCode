@@ -34,11 +34,11 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 7: Handy Haversacks](https://github.com/king-11/AdventOfCode/tree/master/Day7)| 🌟 | 🌟 |
 | ✔ [Day 8: Handheld Halting](https://github.com/king-11/AdventOfCode/tree/master/Day8)| 🌟 | 🌟 |
 | ✔ [Day 9: Encoding Error](https://github.com/king-11/AdventOfCode/tree/master/Day9)| 🌟 | 🌟 |
-| [Day 10: Adapter Array]()| | |
-| [Day 11: Seating System]()| | |
-| [Day 12: TBD]()| | |
-| [Day 13: TBD]()| | |
-| [Day 14: TBD]()| | |
+| ✔ [Day 10: Adapter Array](https://github.com/king-11/AdventOfCode/tree/master/Day10)| 🌟 | 🌟 |
+| ✔ [Day 11: Seating System](https://github.com/king-11/AdventOfCode/tree/master/Day11)| 🌟 | 🌟 |
+| [Day 12: Rain Risk]()| | |
+| [Day 13: Shuttle Search]()| | |
+| [Day 14: Docking Data]()| | |
 | [Day 15: TBD]()| | |
 | [Day 16: TBD]()| | |
 | [Day 17: TBD]()| | |
