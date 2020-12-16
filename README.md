@@ -36,7 +36,7 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 9: Encoding Error](https://github.com/king-11/AdventOfCode/tree/master/Day9)| 🌟 | 🌟 |
 | ✔ [Day 10: Adapter Array](https://github.com/king-11/AdventOfCode/tree/master/Day10)| 🌟 | 🌟 |
 | ✔ [Day 11: Seating System](https://github.com/king-11/AdventOfCode/tree/master/Day11)| 🌟 | 🌟 |
-| [Day 12: Rain Risk]()| | |
+| ✔ [Day 12: Rain Risk](ttps://github.com/king-11/AdventOfCode/tree/master/Day12)| 🌟 | 🌟 |
 | [Day 13: Shuttle Search]()| | |
 | [Day 14: Docking Data]()| | |
 | [Day 15: TBD]()| | |
