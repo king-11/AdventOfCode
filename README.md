@@ -1,5 +1,5 @@
 # Advent of Code
-Advent of Code 2020 🎄 JavaScript Solutions by
+Advent of Code 2020 🎄 GoLang Solutions by
 `@king-11` 😊 [Twitter](https://twitter.com/1108King) | [Github](https://github.com/king-11) | [Instagram](https://instagram.com/cryptic_sniper)
 
 
@@ -25,28 +25,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day  | Part One | Part Two |
 |---|:---:|:---:|
-| ✔ [Day 1: Report Repair](https://github.com/king-11/AdventOfCode/tree/master/Day1)| 🌟 | 🌟 |
-| ✔ [Day 2: Password Philosophy](https://github.com/king-11/AdventOfCode/tree/master/Day2)| 🌟 | 🌟 |
-| ✔ [Day 3: Toboggan Trajectory](https://github.com/king-11/AdventOfCode/tree/master/Day3)| 🌟 | 🌟 |
-| ✔ [Day 4: Passport Processing](https://github.com/king-11/AdventOfCode/tree/master/Day4)| 🌟 | 🌟 |
-| ✔ [Day 5: Binary Boarding](https://github.com/king-11/AdventOfCode/tree/master/Day5)| 🌟 | 🌟 |
-| ✔ [Day 6: Custom Customs](https://github.com/king-11/AdventOfCode/tree/master/Day6)| 🌟 | 🌟 |
-| ✔ [Day 7: Handy Haversacks](https://github.com/king-11/AdventOfCode/tree/master/Day7)| 🌟 | 🌟 |
-| ✔ [Day 8: Handheld Halting](https://github.com/king-11/AdventOfCode/tree/master/Day8)| 🌟 | 🌟 |
-| ✔ [Day 9: Encoding Error](https://github.com/king-11/AdventOfCode/tree/master/Day9)| 🌟 | 🌟 |
-| ✔ [Day 10: Adapter Array](https://github.com/king-11/AdventOfCode/tree/master/Day10)| 🌟 | 🌟 |
-| ✔ [Day 11: Seating System](https://github.com/king-11/AdventOfCode/tree/master/Day11)| 🌟 | 🌟 |
-| ✔ [Day 12: Rain Risk](https://github.com/king-11/AdventOfCode/tree/master/Day12)| 🌟 | 🌟 |
-| ✔ [Day 13: Shuttle Search](https://github.com/king-11/AdventOfCode/tree/master/Day13)| 🌟 | 🌟 |
-| [Day 14: Docking Data]()| | |
-| [Day 15: TBD]()| | |
-| [Day 16: TBD]()| | |
-| [Day 17: TBD]()| | |
-| [Day 18: TBD]()| | |
-| [Day 19: TBD]()| | |
-| [Day 20: TBD]()| | |
-| [Day 21: TBD]()| | |
-| [Day 22: TBD]()| | |
-| [Day 23: TBD]()| | |
-| [Day 24: TBD]()| | |
-| [Day 25: TBD]()| | |
+| ✔ [Day 1: Sonar Sweep](https://github.com/king-11/AdventOfCode/tree/main/day1)| 🌟 | 🌟 |
