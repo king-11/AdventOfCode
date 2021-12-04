@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/king-11/AdventOfCode/day3"
+	"github.com/king-11/AdventOfCode/day4"
 )
 
 func main() {
-  val, err := day3.Part2("./day3/data.txt")
+  val, err := day4.Part2("./day4/data.txt")
   if err != nil {
     panic(err)
   }
