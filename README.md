@@ -27,3 +27,5 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 |---|:---:|:---:|
 | ✔ [Day 1: Sonar Sweep](https://github.com/king-11/AdventOfCode/tree/main/day1)| 🌟 | 🌟 |
 | ✔ [Day 2: Dive!](https://github.com/king-11/AdventOfCode/tree/main/day2)| 🌟 | 🌟 |
+| ✔ [Day 3: Binary Diagnostic](https://github.com/king-11/AdventOfCode/tree/main/day3)| 🌟 | 🌟 |
+| ✔ [Day 4: Giant Squid](https://github.com/king-11/AdventOfCode/tree/main/day4)| 🌟 | 🌟 |
