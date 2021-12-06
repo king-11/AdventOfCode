@@ -31,3 +31,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 3: Binary Diagnostic](https://github.com/king-11/AdventOfCode/tree/main/day3)| 🌟 | 🌟 |
 | ✔ [Day 4: Giant Squid](https://github.com/king-11/AdventOfCode/tree/main/day4)| 🌟 | 🌟 |
 | ✔ [Day 5: Hydrothermal Venture](https://github.com/king-11/AdventOfCode/tree/main/day5)| 🌟 | 🌟 |
+| ✔ [Day 6: Lanternfish](https://github.com/king-11/AdventOfCode/tree/main/day6)| 🌟 | 🌟 |
