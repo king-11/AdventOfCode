@@ -18,7 +18,7 @@ func getData(filename string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(strings.Trim(string(data), "\n")), nil
+	return string(strings.TrimSpace(string(data))), nil
 }
 
 func getLocations(filename string) ([]int, error) {
