@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/king-11/AdventOfCode/day15"
+	"github.com/king-11/AdventOfCode/day16"
 )
 
 func main() {
 	then := time.Now()
-	val, err := day15.Solve("./day15/data.txt", true)
+	val, err := day16.Part2("./day16/data.txt")
 	if err != nil {
 		panic(err)
 	}
