@@ -32,3 +32,15 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 4: Giant Squid](https://github.com/king-11/AdventOfCode/tree/main/day4)| 🌟 | 🌟 |
 | ✔ [Day 5: Hydrothermal Venture](https://github.com/king-11/AdventOfCode/tree/main/day5)| 🌟 | 🌟 |
 | ✔ [Day 6: Lanternfish](https://github.com/king-11/AdventOfCode/tree/main/day6)| 🌟 | 🌟 |
+| ✔ [Day 7: The Treachery of Whales](https://github.com/king-11/AdventOfCode/tree/main/day7)| 🌟 | 🌟 |
+| ✔ [Day 8: Seven Segment Search](https://github.com/king-11/AdventOfCode/tree/main/day8)| 🌟 | 🌟 |
+| ✔ [Day 9: Smoke Basin](https://github.com/king-11/AdventOfCode/tree/main/day9)| 🌟 | 🌟 |
+| ✔ [Day 10: Syntax Scoring](https://github.com/king-11/AdventOfCode/tree/main/day10)| 🌟 | 🌟 |
+| ✔ [Day 11: Dumbo Octopus](https://github.com/king-11/AdventOfCode/tree/main/day11)| 🌟 | 🌟 |
+| ✔ [Day 12: Passage Pathing](https://github.com/king-11/AdventOfCode/tree/main/day12)| 🌟 | 🌟 |
+| ✔ [Day 13: Transparent Origami](https://github.com/king-11/AdventOfCode/tree/main/day13)| 🌟 | 🌟 |
+| ✔ [Day 14: Extended Polymerization](https://github.com/king-11/AdventOfCode/tree/main/day14)| 🌟 | 🌟 |
+| ✔ [Day 15: Chiton](https://github.com/king-11/AdventOfCode/tree/main/day15)| 🌟 | 🌟 |
+| ✔ [Day 16: Packet Decoder](https://github.com/king-11/AdventOfCode/tree/main/day16)| 🌟 | 🌟 |
+| ✔ [Day 17: Trick Shot](https://github.com/king-11/AdventOfCode/tree/main/day17)| 🌟 | 🌟 |
+| ✔ [Day 18: Snailfish](https://github.com/king-11/AdventOfCode/tree/main/day18)| 🌟 | 🌟 |
