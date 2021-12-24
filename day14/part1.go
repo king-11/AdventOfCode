@@ -41,7 +41,7 @@ func Part(filename string, steps int) (int, error) {
 	}
 	counts[string(template[len(template)-1])]++
 
-	max, min := 0, math.MaxInt
+	max, min := 0, math.MaxInt64
 
 	for _, v := range counts {
 		if v < min {

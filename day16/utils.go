@@ -204,7 +204,7 @@ func(p *Packet) evaluateExpression() int {
 
 		return product
 	case TYPE_MIN:
-		min := math.MaxInt
+		min := math.MaxInt64
 		for _, val := range values {
 			if val < min {
 				min = val
@@ -212,7 +212,7 @@ func(p *Packet) evaluateExpression() int {
 		}
 		return min
 	case TYPE_MAX:
-		max := math.MinInt
+		max := math.MinInt64
 		for _, val := range values {
 			if val > max {
 				max = val

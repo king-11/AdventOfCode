@@ -39,7 +39,7 @@ func getMatrix(scanner *bufio.Scanner) ([][]int, error) {
 	return lines, nil
 }
 
-const INF = math.MaxInt
+const INF = math.MaxInt64
 
 type node struct {
 	coord pair
