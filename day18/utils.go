@@ -169,8 +169,8 @@ func findSpilt(nodes []*Node) *Node {
 	return nil
 }
 
-func (node *Node) explore() {
-	nodes := HEAD.flatten()
+func (main *Node) explore() {
+	nodes := main.flatten()
 	modified := true
 	for modified {
 		modified = false
@@ -199,7 +199,7 @@ func (node *Node) explore() {
 		}
 
 		if modified {
-			nodes = HEAD.flatten()
+			nodes = main.flatten()
 		}
 	}
 }

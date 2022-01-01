@@ -1,6 +1,8 @@
 package day18
 
 import (
+	"sync"
+
 	"github.com/king-11/AdventOfCode/utils"
 )
 
@@ -50,37 +52,57 @@ func Part2(filename string) (int, error) {
 		return 0, err
 	}
 
-	max := 0
+	max := new(int)
+	sem := make(chan int, 8)
+	errChan := make(chan error, 1)
+	var wg sync.WaitGroup
+	var mutex sync.Mutex
 	for i := range nodes {
-		for  j := i+1; j < len(nodes); j++ {
-			cur_node, err := newNode(nodes[i])
-			if err != nil {
-				return 0, err
-			}
-			temp_node, err := newNode(nodes[j])
-			if err != nil {
-				return 0, err
-			}
-			HEAD = cur_node.join(temp_node)
-			HEAD.explore()
-			if val := HEAD.value(); val > max {
-				max = val
-			}
-			HEAD = nil
-			cur_node = nil
-			temp_node = nil
-			cur_node, _ = newNode(nodes[i])
-			temp_node, _ = newNode(nodes[j])
-			HEAD = temp_node.join(cur_node)
-			HEAD.explore()
-			if val := HEAD.value(); val > max {
-				max = val
-			}
-			HEAD = nil
-			cur_node = nil
-			temp_node = nil
+		for j := i + 1; j < len(nodes); j++ {
+			wg.Add(1)
+			go worker(nodes[i], nodes[j], sem, errChan, &wg, &mutex, max)
+			wg.Add(1)
+			go worker(nodes[j], nodes[i], sem, errChan, &wg, &mutex, max)
 		}
 	}
+	wg.Wait()
+	close(errChan)
 
-	return max, nil
+	return *max, <-errChan
+}
+
+func worker(f string, s string, sem chan int, errChan chan error, wg *sync.WaitGroup, mutex *sync.Mutex, max *int) {
+	defer wg.Done()
+	sem <- 1
+	first, err := newNode(f)
+	if err != nil {
+		select {
+		case errChan <- err:
+			// we're the first worker to fail
+		default:
+			// some other failure has already happened
+		}
+	}
+	second, err := newNode(s)
+	if err != nil {
+		select {
+		case errChan <- err:
+			// we're the first worker to fail
+		default:
+			// some other failure has already happened
+		}
+	} else {
+		HEAD := first.join(second)
+		HEAD.explore()
+		val := HEAD.value()
+		mutex.Lock()
+		defer mutex.Unlock()
+		if val > *max {
+			*max = val
+		}
+		HEAD = nil
+		first = nil
+		second = nil
+	}
+	<-sem
 }
