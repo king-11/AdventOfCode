@@ -1,5 +1,5 @@
 # Advent of Code
-Advent of Code 2020 🎄 GoLang Solutions by
+Advent of Code 2022 🎄 Rust Solutions by
 `@king-11` 😊 [Twitter](https://twitter.com/1108King) | [Github](https://github.com/king-11) | [Instagram](https://instagram.com/cryptic_sniper)
 
 
@@ -11,3 +11,9 @@ You don't need a computer science background to participate - just a little prog
 If you'd like to support Advent of Code, you can do so indirectly by helping to [Share](https://adventofcode.com/2020/about) it with others, or directly via [PayPal](https://www.paypal.com/webapps/shoppingcart?flowlogging_id=482758c113636&mfid=1607161233294_482758c113636#/checkout/openButton) or [Coinbase](https://adventofcode.com/2020/support/coinbase).
 
 Advent of Code is a registered trademark in the United States.
+
+## My Solutions
+
+| Day  | Part One | Part Two |
+|---|:---:|:---:|
+| ✔ [Day 1: Calorie Counting](https://github.com/king-11/AdventOfCode/tree/main/src/day1.rs)| 🌟 | 🌟 |
