@@ -40,3 +40,24 @@ pub fn part2(content: &str) -> i32 {
         })
         .sum()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const CASE: &str = "A Y
+B X
+C Z";
+
+    #[test]
+    fn part2_test() {
+        let result = part2(CASE);
+        assert_eq!(result, 12);
+    }
+
+    #[test]
+    fn part1_test() {
+        let result = part1(CASE);
+        assert_eq!(result, 15);
+    }
+}

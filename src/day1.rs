@@ -25,3 +25,35 @@ pub fn part2(content: &str) -> i32 {
 
     result_vec[..3].iter().sum()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const CASE: &str = "1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000";
+
+    #[test]
+    fn part2_test() {
+        let result = part2(CASE);
+        assert_eq!(result, 45000);
+    }
+
+    #[test]
+    fn part1_test() {
+        let result = part1(CASE);
+        assert_eq!(result, 24000);
+    }
+}
