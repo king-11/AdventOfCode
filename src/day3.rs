@@ -2,9 +2,7 @@ use std::collections::HashSet;
 
 use itertools::Itertools;
 
-use if_chain::if_chain;
-
-fn change_to_int(ch: char) -> u32 {
+fn change_to_priority(ch: char) -> u32 {
     if ch.is_ascii_lowercase() {
         return (ch as u32 - 'a' as u32) + 1;
     } else {
@@ -17,21 +15,11 @@ pub fn part1(content: &str) -> i32 {
     content
         .lines()
         .map(|item| {
-            let leng = item.len();
-            let mut std_set = HashSet::new();
-            let mut chr = item.chars().nth(0).unwrap();
-            for (i, ch) in item.char_indices() {
-                if i * 2 >= leng {
-                    if std_set.contains(&ch) {
-                        chr = ch;
-                    }
-                } else {
-                    std_set.insert(ch);
-                }
-            }
-            chr
+            let (s1, s2) = item.split_at(item.len() / 2);
+            let std_set = s1.chars().collect::<HashSet<char>>();
+            s2.chars().find(|ch| std_set.contains(ch)).unwrap()
         })
-        .map(change_to_int)
+        .map(change_to_priority)
         .sum::<u32>() as i32
 }
 
@@ -39,33 +27,15 @@ pub fn part1(content: &str) -> i32 {
 pub fn part2(content: &str) -> i32 {
     content
         .lines()
-        .batching(|it| {
-            if_chain! {
-                if let Some(s1) = it.next();
-                if let Some(s2) = it.next();
-                if let Some(s3) = it.next();
-                then {
-                    return Some((s1, s2, s3));
-                }
-            }
-
-            None
-        })
+        .chunks(3)
+        .into_iter()
         .map(|group| {
-            let st1 = group.0.chars().collect::<HashSet<char>>();
-            let st2 = group.1.chars().collect::<HashSet<char>>();
-
-            let mut chr = group.0.chars().nth(0).unwrap();
-
-            for ch in group.2.chars() {
-                if st1.contains(&ch) && st2.contains(&ch) {
-                    chr = ch;
-                }
-            }
-
-            chr
+            let (s1, s2, s3) = group.collect_tuple().unwrap();
+            let st1 = s1.chars().collect::<HashSet<char>>();
+            let st2 = s2.chars().collect::<HashSet<char>>();
+            s3.chars().find(|ch| st1.contains(&ch) && st2.contains(&ch)).unwrap()
         })
-        .map(change_to_int)
+        .map(change_to_priority)
         .sum::<u32>() as i32
 }
 
