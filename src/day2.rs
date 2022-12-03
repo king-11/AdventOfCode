@@ -20,6 +20,7 @@ pub fn part1(content: &str) -> i32 {
         .sum()
 }
 
+#[allow(dead_code)]
 pub fn part2(content: &str) -> i32 {
     content
         .lines()

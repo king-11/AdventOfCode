@@ -1,5 +1,6 @@
 use itertools::Itertools;
 
+#[allow(dead_code)]
 pub fn part1(content: &str) -> i32 {
     content
         .split("\n\n")
@@ -12,6 +13,7 @@ pub fn part1(content: &str) -> i32 {
         .unwrap()
 }
 
+#[allow(dead_code)]
 pub fn part2(content: &str) -> i32 {
     let result_vec = content
         .split("\n\n")
