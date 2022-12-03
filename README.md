@@ -18,3 +18,4 @@ Advent of Code is a registered trademark in the United States.
 |---|:---:|:---:|
 | ✔ [Day 1: Calorie Counting](https://github.com/king-11/AdventOfCode/tree/main/src/day1.rs)| 🌟 | 🌟 |
 | ✔ [Day 2: Rock Paper Scissors](https://github.com/king-11/AdventOfCode/tree/main/src/day2.rs)| 🌟 | 🌟 |
+| ✔ [Day 3: Rucksack Reorganization](https://github.com/king-11/AdventOfCode/tree/main/src/day3.rs)| 🌟 | 🌟 |
