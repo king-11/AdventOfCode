@@ -11,3 +11,6 @@ itertools = "0.10.5"
 json = "0.12.4"
 regex = "1.7.0"
 rust-crypto = "0.2.36"
+
+[dev-dependencies]
+test-case = "2.2.2"

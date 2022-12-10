@@ -20,21 +20,23 @@ fn part(content: &str, size_pac: usize) -> i32 {
 #[cfg(test)]
 mod tests {
   use super::*;
+  use test_case::test_case;
 
-  const CASES: [&str; 4] = ["bvwbjplbgvbhsrlpgdmjqwftvncz", "nppdvjthqldpwncqszvftbrmjlhg", "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"];
-
-  const RESULT_1: [i32; 4] = [5, 6, 10, 11];
-  const RESULT_2: [i32; 4] = [23, 23, 29, 26];
-
-  #[test]
-  fn part1_test() {
-    let result = CASES.iter().map(|case| part1(case)).collect_vec();
-    assert_eq!(result, RESULT_1);
+  #[test_case(5, "bvwbjplbgvbhsrlpgdmjqwftvncz")]
+  #[test_case(6, "nppdvjthqldpwncqszvftbrmjlhg")]
+  #[test_case(10, "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg")]
+  #[test_case(11, "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw")]
+  fn part1_test(exp_res: i32, case: &str) {
+    let result = part1(case);
+    assert_eq!(result, exp_res);
   }
 
-  #[test]
-  fn part2_test() {
-    let result = CASES.iter().map(|case| part2(case)).collect_vec();
-    assert_eq!(result, RESULT_2);
+  #[test_case(23, "bvwbjplbgvbhsrlpgdmjqwftvncz")]
+  #[test_case(23, "nppdvjthqldpwncqszvftbrmjlhg")]
+  #[test_case(29, "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg")]
+  #[test_case(26, "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw")]
+  fn part2_test(exp_res: i32, case: &str) {
+    let result = part2(case);
+    assert_eq!(result, exp_res);
   }
 }
