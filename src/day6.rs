@@ -12,20 +12,9 @@ pub fn part2(content: &str) -> i32 {
 
 fn part(content: &str, size_pac: usize) -> i32 {
   content
-    .chars()
-    .fold((String::new(), 0), |mut acc, chr| {
-      if acc.0.len() < size_pac {
-        acc.0.push(chr);
-      }
-
-      if acc.0.chars().all_unique() {
-        return acc;
-      } else {
-        acc.0.remove(0);
-        return (acc.0, acc.1 + 1);
-      }
-    })
-    .1 + size_pac as i32
+    .as_bytes()
+    .windows(size_pac)
+    .position(|window| window.iter().all_unique()).unwrap() as i32 + size_pac as i32
 }
 
 #[cfg(test)]
