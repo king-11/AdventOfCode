@@ -22,3 +22,4 @@ Advent of Code is a registered trademark in the United States.
 | ✔ [Day 4: Camp Cleanup](https://github.com/king-11/AdventOfCode/tree/main/src/day4.rs)| 🌟 | 🌟 |
 | ✔ [Day 5: Supply Stacks](https://github.com/king-11/AdventOfCode/tree/main/src/day5.rs)| 🌟 | 🌟 |
 | ✔ [Day 6: Tuning Trouble](https://github.com/king-11/AdventOfCode/tree/main/src/day6.rs)| 🌟 | 🌟 |
+| ✔ [Day 8: Treetop Tree House](https://github.com/king-11/AdventOfCode/tree/main/src/day8.rs)| 🌟 | 🌟 |
