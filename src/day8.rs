@@ -7,17 +7,17 @@ pub fn part1(content: &str) -> i32 {
         .map(|line| line.as_bytes().iter().map(|c| c - b'0').collect_vec())
         .collect_vec();
 
-        let mut around_grid = (0..grid.len())
+    let mut around_grid = (0..grid.len())
         .map(|_| (0..grid[0].len()).map(|_| (0, 0, 0, 0)).collect_vec())
         .collect_vec();
 
-        let mut marked = (0..grid.len())
+    let mut marked = (0..grid.len())
         .map(|_| (0..grid[0].len()).map(|_| false).collect_vec())
         .collect_vec();
 
-        for (i, row) in grid.as_slice().iter().enumerate() {
-            for (j, &x) in row.as_slice().iter().enumerate() {
-                if i > 0 {
+    for (i, row) in grid.iter().enumerate() {
+        for (j, &x) in row.iter().enumerate() {
+            if i > 0 {
                 around_grid[i][j].0 = grid[i - 1][j].max(around_grid[i - 1][j].0);
             }
             if j > 0 {
@@ -59,8 +59,7 @@ pub fn part1(content: &str) -> i32 {
     }
 
     marked
-    .as_slice()
-    .iter()
+        .iter()
         .map(|row| row.as_slice().iter().filter(|&x| *x).count())
         .sum::<usize>() as i32
 }
@@ -68,8 +67,8 @@ pub fn part1(content: &str) -> i32 {
 #[allow(dead_code)]
 pub fn part2(content: &str) -> i32 {
     let grid = content
-    .lines()
-    .map(|line| line.as_bytes().iter().map(|c| c - b'0').collect_vec())
+        .lines()
+        .map(|line| line.as_bytes().iter().map(|c| c - b'0').collect_vec())
         .collect_vec();
 
     let mut max_area = 0;
