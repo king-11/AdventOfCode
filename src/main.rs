@@ -6,11 +6,12 @@ mod day5;
 mod day6;
 mod day8;
 mod day9;
+mod day10;
 
 fn main() {
-    let content =  std::fs::read_to_string("./data/day9.txt").unwrap();
+    let content =  std::fs::read_to_string("./data/day10.txt").unwrap();
     let t0 = std::time::Instant::now();
-    let result = day9::part2(&content);
+    let result = day10::part2(&content);
     let t1 = std::time::Instant::now().duration_since(t0);
     println!("Answer {}", result);
     println!("Time used: ({:?})", t1);
