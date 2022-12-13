@@ -24,3 +24,5 @@ Advent of Code is a registered trademark in the United States.
 | ✔ [Day 6: Tuning Trouble](https://github.com/king-11/AdventOfCode/tree/main/src/day6.rs)| 🌟 | 🌟 |
 | ✔ [Day 8: Treetop Tree House](https://github.com/king-11/AdventOfCode/tree/main/src/day8.rs)| 🌟 | 🌟 |
 | ✔ [Day 9: Rope Bridge](https://github.com/king-11/AdventOfCode/tree/main/src/day9.rs)| 🌟 | 🌟 |
+| ✔ [Day 10: Cathode-Ray Tube](https://github.com/king-11/AdventOfCode/tree/main/src/day10.rs)| 🌟 | 🌟 |
+| ✔ [Day 12: Hill Climbing Algorithm](https://github.com/king-11/AdventOfCode/tree/main/src/day12.rs)| 🌟 | 🌟 |

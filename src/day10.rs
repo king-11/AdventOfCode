@@ -1,5 +1,4 @@
 use itertools::Itertools;
-
 fn increment(val: i32, cycle: i32) -> i32 {
   if [20, 60, 100, 140, 180, 220].contains(&cycle) {
     return cycle*val;
@@ -8,6 +7,7 @@ fn increment(val: i32, cycle: i32) -> i32 {
   0
 }
 
+#[allow(dead_code)]
 pub fn part1(content: &str) -> i32 {
   let mut cycle = 0;
   let mut prod = 0;
@@ -28,6 +28,7 @@ pub fn part1(content: &str) -> i32 {
   prod
 }
 
+#[allow(dead_code)]
 pub fn part2(content: &str) -> i32 {
   let mut cycle = 0;
   let mut val = 1;
