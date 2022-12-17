@@ -1,7 +1,7 @@
 use std::{fmt::Debug, str::FromStr, string::ParseError};
 
 use itertools::Itertools;
-use regex::Regex;
+use nom::{*, bytes::complete::tag, character::complete::{self, newline, multispace1, alphanumeric1}, multi::{separated_list0, separated_list1}, branch::alt};
 
 enum Operator {
     Add,
@@ -38,69 +38,61 @@ struct Monkey {
     inspected: i64,
 }
 
-impl FromStr for Monkey {
-    type Err = ParseError;
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let items_regex = Regex::new(r"\d+").unwrap();
-        let op_regex = Regex::new(r"\s+Operation: new = old (.) (\d+|old)").unwrap();
-        let test_regex = Regex::new(r"\s+Test: divisible by (\d+)").unwrap();
-        let throw_regex = Regex::new(r"\s+If (true|false): throw to monkey (\d+)").unwrap();
+fn parse_items(input: &str) -> IResult<&str, Vec<i64>> {
+    let (input, _) = multispace1(input)?;
+    let (input, _) = tag("Starting items: ")(input)?;
+    let (input, items) = separated_list0(tag(", "), complete::i64)(input)?;
 
-        let lines = s.lines().collect_vec();
+    Ok((input, items))
+}
 
-        let items = items_regex
-            .find_iter(lines[1])
-            .map(|item| item.as_str().parse::<i64>().unwrap())
-            .collect_vec();
+fn parse_operation(input: &str) -> IResult<&str, Operator> {
+    let (input, _) = multispace1(input)?;
+    let (input, _) = tag("Operation: new = old ")(input)?;
+    let (input, op) = alt((tag("+"), tag("*")))(input)?;
+    let (input, _) = multispace1(input)?;
 
-        let caps = op_regex.captures(lines[2]).unwrap();
-        let (op, op_val) = (
-            caps.get(1).unwrap().as_str().parse::<Operator>().unwrap(),
-            caps.get(2).unwrap().as_str().parse::<i64>(),
-        );
+    Ok((input, op.parse().unwrap()))
+}
 
-        let op_val = match op_val {
-            Ok(val) => Some(val),
-            Err(_) => None,
-        };
+fn parse_monkey(input: &str) -> IResult<&str, Monkey> {
+    let (input, _) = tag("Monkey ")(input)?;
+    let (input, _) = complete::i64(input)?;
+    let (input, _) = tag(":")(input)?;
+    let (input, _) = newline(input)?;
 
-        let test = test_regex
-            .captures(lines[3])
-            .unwrap()
-            .get(1)
-            .unwrap()
-            .as_str()
-            .parse::<i64>()
-            .unwrap();
+    let (input, items) = parse_items(input)?;
+    let (input, _) = newline(input)?;
 
-        let true_throw = throw_regex
-            .captures(lines[4])
-            .unwrap()
-            .get(2)
-            .unwrap()
-            .as_str()
-            .parse::<usize>()
-            .unwrap();
-        let false_throw = throw_regex
-            .captures(lines[5])
-            .unwrap()
-            .get(2)
-            .unwrap()
-            .as_str()
-            .parse::<usize>()
-            .unwrap();
+    let (input, op) = parse_operation(input)?;
+    let (input, val) = alt((tag("old"), alphanumeric1))(input)?;
+    let op_val = match val.parse::<i64>() {
+        Err(_) => None,
+        Ok(val) => Some(val)
+    };
+    let (input, _) = newline(input)?;
 
-        Ok({
-            Monkey {
-                items,
-                op,
-                op_val,
-                test,
-                throw: (true_throw, false_throw),
-                inspected: 0,
-            }
-        })
-    }
+    let (input, _) = multispace1(input)?;
+    let (input, _) = tag("Test: divisible by ")(input)?;
+    let (input, test) = complete::i64(input)?;
+    let (input, _) = newline(input)?;
+
+    let (input, _) = multispace1(input)?;
+    let (input, _) = tag("If true: throw to monkey ")(input)?;
+    let (input, true_val) = complete::i64(input)?;
+    let (input, _) = newline(input)?;
+
+    let (input, _) = multispace1(input)?;
+    let (input, _) = tag("If false: throw to monkey ")(input)?;
+    let (input, false_val) = complete::i64(input)?;
+
+    Ok((input, Monkey { items, op_val, op, test, inspected: 0, throw: (true_val as usize, false_val as usize)}))
+}
+
+fn parse_monkeys(input: &str) -> IResult<&str, Vec<Monkey>> {
+    let (input, monkeys) = separated_list1(tag("\n\n"), parse_monkey)(input)?;
+
+    Ok((input, monkeys))
 }
 
 impl Monkey {
@@ -130,8 +122,7 @@ pub fn part2(content: &str) -> i64 {
 }
 
 fn part(content: &str, count: i64, worry_reduce: i64) -> i64 {
-    let mut monkeys = content.split("\n\n").map(|line| line.parse::<Monkey>().unwrap()).collect_vec();
-
+    let mut monkeys = parse_monkeys(content).unwrap().1;
     let modulo = monkeys.iter().fold(1, |acc, mk| acc * mk.test);
 
     for _ in 0..count {

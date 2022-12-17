@@ -9,6 +9,7 @@ edition = "2021"
 if_chain = "1.0.2"
 itertools = "0.10.5"
 json = "0.12.4"
+nom = "7.1.1"
 regex = "1.7.0"
 rust-crypto = "0.2.36"
 

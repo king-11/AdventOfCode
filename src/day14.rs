@@ -1,6 +1,6 @@
-use std::collections::HashSet;
-
 use itertools::Itertools;
+use nom::{bytes::complete::tag, character::complete::newline, multi::separated_list1, *};
+use std::collections::HashSet;
 
 #[derive(PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy, Debug)]
 struct Position(i32, i32);
@@ -29,36 +29,43 @@ impl Position {
     }
 }
 
+fn parse_vertex(input: &str) -> IResult<&str, Position> {
+    let (input, x) = character::complete::i32(input)?;
+    let (input, _) = tag(",")(input)?;
+    let (input, y) = character::complete::i32(input)?;
+
+    Ok((input, Position::new(x, y)))
+}
+
+fn parse_line(input: &str) -> IResult<&str, Vec<Position>> {
+    let (input, line) = separated_list1(tag(" -> "), parse_vertex)(input)?;
+
+    Ok((input, line))
+}
+
+fn parse_lines(input: &str) -> IResult<&str, Vec<Vec<Position>>> {
+    let (input, lines) = separated_list1(newline, parse_line)(input)?;
+
+    Ok((input, lines))
+}
+
 fn parse_walls(content: &str) -> HashSet<Position> {
     let mut graph = HashSet::new();
-    content.lines().for_each(|line| {
-        let ranges = line
-            .split(" -> ")
-            .map(|range| {
-                range
-                    .split(",")
-                    .map(|num| num.parse::<i32>().unwrap())
-                    .collect_tuple::<(i32, i32)>()
-                    .unwrap()
-            })
-            .collect_vec();
-
-        ranges
-            .into_iter()
-            .tuple_windows::<((i32, i32), (i32, i32))>()
-            .for_each(|(tup1, tup2)| {
-                if tup1.0 == tup2.0 {
-                    let (start, end) = (tup1.1.min(tup2.1), tup1.1.max(tup2.1));
-                    for y in start..=end {
-                        graph.insert(Position::new(tup1.0, y));
-                    }
-                } else {
-                    let (start, end) = (tup1.0.min(tup2.0), tup1.0.max(tup2.0));
-                    for x in start..=end {
-                        graph.insert(Position::new(x, tup1.1));
-                    }
+    let ranges = parse_lines(content).unwrap().1;
+    ranges.iter().for_each(|line| {
+        line.iter().tuple_windows().for_each(|(tup1, tup2)| {
+            if tup1.0 == tup2.0 {
+                let (start, end) = (tup1.1.min(tup2.1), tup1.1.max(tup2.1));
+                for y in start..=end {
+                    graph.insert(Position::new(tup1.0, y));
                 }
-            });
+            } else {
+                let (start, end) = (tup1.0.min(tup2.0), tup1.0.max(tup2.0));
+                for x in start..=end {
+                    graph.insert(Position::new(x, tup1.1));
+                }
+            }
+        })
     });
 
     graph
@@ -85,7 +92,7 @@ pub fn part1(content: &str) -> i32 {
 
 #[allow(dead_code)]
 pub fn part2(content: &str) -> i32 {
-  let mut graph = parse_walls(content);
+    let mut graph = parse_walls(content);
     let y_max = graph.iter().map(|tup| tup.1).max().unwrap() + 1;
 
     let mut sand_particles = 0;
