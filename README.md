@@ -30,6 +30,7 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 4: Camp Cleanup](https://github.com/king-11/AdventOfCode/tree/main/src/day4.rs)| 🌟 | 🌟 |
 | ✔ [Day 5: Supply Stacks](https://github.com/king-11/AdventOfCode/tree/main/src/day5.rs)| 🌟 | 🌟 |
 | ✔ [Day 6: Tuning Trouble](https://github.com/king-11/AdventOfCode/tree/main/src/day6.rs)| 🌟 | 🌟 |
+| ✔ [Day 7: No Space Left On Device](https://github.com/king-11/AdventOfCode/tree/main/src/day7.rs)| 🌟 | 🌟 |
 | ✔ [Day 8: Treetop Tree House](https://github.com/king-11/AdventOfCode/tree/main/src/day8.rs)| 🌟 | 🌟 |
 | ✔ [Day 9: Rope Bridge](https://github.com/king-11/AdventOfCode/tree/main/src/day9.rs)| 🌟 | 🌟 |
 | ✔ [Day 10: Cathode-Ray Tube](https://github.com/king-11/AdventOfCode/tree/main/src/day10.rs)| 🌟 | 🌟 |
@@ -37,3 +38,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 12: Hill Climbing Algorithm](https://github.com/king-11/AdventOfCode/tree/main/src/day12.rs)| 🌟 | 🌟 |
 | ✔ [Day 13: Distress Signal](https://github.com/king-11/AdventOfCode/tree/main/src/day13.rs)| 🌟 | 🌟 |
 | ✔ [Day 14: Regolith Reservoir](https://github.com/king-11/AdventOfCode/tree/main/src/day14.rs)| 🌟 | 🌟 |
+| ✔ [Day 15: Beacon Exclusion Zone](https://github.com/king-11/AdventOfCode/tree/main/src/day15.rs)| 🌟 | 🌟 |
