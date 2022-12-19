@@ -39,3 +39,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 13: Distress Signal](https://github.com/king-11/AdventOfCode/tree/main/src/day13.rs)| 🌟 | 🌟 |
 | ✔ [Day 14: Regolith Reservoir](https://github.com/king-11/AdventOfCode/tree/main/src/day14.rs)| 🌟 | 🌟 |
 | ✔ [Day 15: Beacon Exclusion Zone](https://github.com/king-11/AdventOfCode/tree/main/src/day15.rs)| 🌟 | 🌟 |
+| ✔ [Day 16: Proboscidea Volcanium](https://github.com/king-11/AdventOfCode/tree/main/src/day16.rs)| 🌟 | - |
