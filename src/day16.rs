@@ -1,6 +1,10 @@
-use std::{collections::{HashMap, BinaryHeap, BTreeSet, BTreeMap}, fmt::Display};
+use std::{
+    collections::{BTreeMap, BTreeSet, BinaryHeap, HashMap},
+    fmt::Display,
+};
 
 use itertools::Itertools;
+use rayon::{*, prelude::{IntoParallelRefMutIterator, IndexedParallelIterator, ParallelIterator, IntoParallelRefIterator}};
 use nom::{
     branch::alt,
     bytes::complete::tag,
@@ -77,12 +81,58 @@ impl Display for SearchSpace {
     }
 }
 
+#[allow(dead_code)]
 pub fn part1(content: &str) -> i32 {
-    part(content, 30)
+    let (_, nodes) = parse_lines(content).unwrap();
+    let sign_nodes: HashMap<usize, usize> = HashMap::from_iter(
+        nodes
+            .iter()
+            .enumerate()
+            .filter_map(|(i, node)| if node.flow > 0 { Some(i) } else { None })
+            .enumerate()
+            .map(|(new_idx, i)| (i, new_idx + 1))
+    );
+
+    let node_count = sign_nodes.len();
+    let mut node_mask = 0;
+    for i in 1..=node_count {
+        node_mask |= 1 << i;
+    }
+
+    part(&nodes, 30, node_mask, &sign_nodes)
 }
 
-fn part(content: &str, max_time: i32) -> i32 {
+#[allow(dead_code)]
+pub fn part2(content: &str) -> i32 {
     let (_, nodes) = parse_lines(content).unwrap();
+    let sign_nodes: HashMap<usize, usize> = HashMap::from_iter(
+        nodes
+            .iter()
+            .enumerate()
+            .filter_map(|(i, node)| if node.flow > 0 { Some(i) } else { None })
+            .enumerate()
+            .map(|(mask_id, i)| (i, mask_id + 1))
+    );
+    let node_count = sign_nodes.len();
+
+    let mut node_mask = 0;
+    for i in 1..=node_count {
+        node_mask |= 1 << i;
+    }
+
+    let mut pressure = vec![0; node_mask+1];
+
+    pressure.par_iter_mut().enumerate().for_each(|(i , p)| {
+        *p = part(&nodes, 26, i as i32, &sign_nodes);
+    });
+
+    pressure.par_iter().enumerate().map(|(i, p)| {
+        let mask_e = !i & node_mask;
+        *p + pressure[mask_e]
+    }).max().unwrap() as i32
+}
+
+fn part(nodes: &Vec<Node>, max_time: i32, consider_nodes: i32, sign_nodes: &HashMap<usize, usize>) -> i32 {
     let mut prune_queue = BinaryHeap::new();
 
     let mut time_idx_set: BTreeMap<(i32, usize), i32> = BTreeMap::new();
@@ -102,13 +152,18 @@ fn part(content: &str, max_time: i32) -> i32 {
             continue;
         }
 
+        let mask_idx = *sign_nodes.get(&idx).unwrap_or(&0) as i32;
+        if (consider_nodes & (1 << mask_idx) == 0) && mask_idx != 0 {
+            continue;
+        }
+
         time_idx_set.insert((time, idx), score);
         if time == max_time {
             max_pressure = max_pressure.max(score);
             continue;
         }
 
-        if !opened.contains(&idx) && nodes[idx].flow > 0  {
+        if !opened.contains(&idx) && nodes[idx].flow > 0 {
             opened.insert(idx);
 
             let new_score = score + opened.iter().map(|&i| nodes[i].flow).sum::<u32>() as i32;
@@ -147,5 +202,11 @@ Valve JJ has flow rate=21; tunnel leads to valve II";
     fn test_part1() {
         let res = part1(CASE);
         assert_eq!(res, 1651);
+    }
+
+    #[test]
+    fn test_part2() {
+        let res = part2(CASE);
+        assert_eq!(res, 1707);
     }
 }

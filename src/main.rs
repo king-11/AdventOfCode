@@ -18,7 +18,7 @@ mod day16;
 fn main() {
     let content =  std::fs::read_to_string("./data/day16.txt").unwrap();
     let t0 = std::time::Instant::now();
-    let result = day16::part1(&content);
+    let result = day16::part2(&content);
     let t1 = std::time::Instant::now().duration_since(t0);
     println!("Answer {}", result);
     println!("Time used: ({:?})", t1);
