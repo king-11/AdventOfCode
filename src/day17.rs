@@ -20,77 +20,87 @@ fn parse_air(input: &str) -> IResult<&str, Vec<Move>> {
 
 #[derive(Clone)]
 struct RockFormation {
-    rocks: Vec<(i32, i32)>,
+    rocks: Vec<u8>,
+    position: usize
 }
-
-const X_MIN: i32 = 1;
-const X_MAX: i32 = 7;
 
 lazy_static! {
     static ref ROCKS: Vec<RockFormation> = vec![
         // minus
         RockFormation {
-            rocks: vec![(1, 0), (2, 0), (3, 0), (4, 0)]
+            rocks: vec![0b_1111],
+            position: 0
         },
         // plus
         RockFormation {
-            rocks: vec![(2, 2), (1, 1), (2, 1), (3, 1), (2, 0)]
+            rocks: vec![0b_010, 0b_111, 0b_010],
+            position: 0
         },
         // L shape
         RockFormation {
-            rocks: vec![(3, 2), (3, 1), (1, 0), (2, 0), (3, 0)]
+            rocks: vec![0b_100, 0b_100, 0b_111],
+            position: 0
         },
         // Line
         RockFormation {
-            rocks: vec![(1, 3), (1, 2), (1, 1), (1, 0)]
+            rocks: vec![0b_1, 0b_1, 0b_1, 0b_1],
+            position: 0
         },
         // square
         RockFormation {
-            rocks: vec![(1, 1), (2, 1), (1, 0), (2, 0)]
+            rocks: vec![0b_11, 0b_11],
+            position: 0
         }
     ];
 }
 
 impl RockFormation {
-    fn air_displace(&mut self, air_move: &Move, blocked: &BTreeMap<i32, Vec<i32>>) {
-        let x_mov = match air_move {
-            Move::Left => -1,
-            Move::Right => 1,
+    fn air_displace(&mut self, air_move: &Move, blocked: &BTreeMap<usize, u8>) {
+        let new_vals = match air_move {
+            Move::Left => self.rocks.iter().map(|val| *val >> 1).collect_vec(),
+            Move::Right => self.rocks.iter().map(|val| *val << 1).collect_vec(),
         };
 
-        if self.rocks.iter().any(|(x, y)| {
-            blocked.get(y).unwrap_or(&vec![]).contains(&(x + x_mov))
-                || x + x_mov < X_MIN
-                || x + x_mov > X_MAX
-        }) {
+        if new_vals
+            .iter()
+            .zip(self.rocks.iter())
+            .rev()
+            .enumerate()
+            .any(|(idx, (&val, &old_val))| *blocked.get(&(self.position + idx)).unwrap_or(&0) & val != 0 || val.count_ones() != old_val.count_ones() || val & 1 << 7 != 0)
+        {
             return;
         }
 
-        self.rocks.iter_mut().for_each(|(x, _)| *x = *x + x_mov);
+        self.rocks = new_vals;
     }
-    fn height_displace(&mut self, y_mov: i32) {
-        self.rocks.iter_mut().for_each(|(_, y)| *y = *y + y_mov);
+    fn move_down(&mut self) {
+        self.position -= 1;
     }
-    fn bottom_found(&mut self, blocked: &BTreeMap<i32, Vec<i32>>) -> bool {
-        self.rocks.iter().any(|(x, y)| blocked.get(&(y-1)).unwrap_or(&vec![]).contains(x))
+    fn bottom_found(&mut self, blocked: &BTreeMap<usize, u8>) -> bool {
+        self.rocks
+            .iter()
+            .rev()
+            .enumerate()
+            .any(|(idx, &val)| {
+                *blocked.get(&(idx + self.position - 1)).unwrap_or(&0) & val != 0
+            })
     }
 }
 
-pub fn part1(content: &str) -> i32 {
+pub fn part1(content: &str) -> usize {
     let (_, air) = parse_air(content).unwrap();
     let mut air_moves = air.iter().cycle();
 
     let mut rock_moves = ROCKS.iter().cycle();
-    let mut blocked = BTreeMap::new();
+    let mut blocked: BTreeMap<usize, u8> = BTreeMap::new();
 
-    blocked.insert(0, (1..7).map(|i| i).collect_vec());
+    blocked.insert(0, 0b1111111);
     let mut y_max = 0;
     for _ in 0..2022 {
         let mut rock = rock_moves.next().unwrap().clone();
-        rock.height_displace(y_max + 3 + 1);
 
-        rock.air_displace(&Move::Right, &blocked);
-        rock.air_displace(&Move::Right, &blocked);
+        rock.position = y_max + 3 + 1;
+        rock.rocks.iter_mut().for_each(|val| *val <<= 2);
 
         loop {
             match air_moves.next() {
@@ -99,19 +109,19 @@ pub fn part1(content: &str) -> i32 {
             };
 
             if rock.bottom_found(&blocked) {
-                for (x, y) in rock.rocks.iter() {
-                    y_max = y_max.max(*y);
-                    match blocked.get_mut(&y) {
-                        Some(val) => val.push(*x),
+                y_max = y_max.max(rock.position + (rock.rocks.len() - 1));
+                for (idx, val) in rock.rocks.iter().rev().enumerate() {
+                    match blocked.get_mut(&(idx + rock.position)) {
+                        Some(block) => {*block |= *val;},
                         None => {
-                            blocked.insert(*y, vec![*x]);
+                            blocked.insert(idx + rock.position, *val);
                         }
                     }
                 }
                 break;
             }
 
-            rock.height_displace(-1);
+            rock.move_down();
         }
     }
 
