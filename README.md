@@ -1,5 +1,5 @@
 # Advent of Code
-Advent of Code 2022 🎄 Rust Solutions by
+Advent of Code 2023 🎄 Kotlin Solutions by
 `@king-11` 😊 [Twitter](https://twitter.com/1108King) | [Github](https://github.com/king-11) | [Instagram](https://instagram.com/cryptic_sniper)
 
 

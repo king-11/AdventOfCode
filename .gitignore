@@ -1,2 +1,4 @@
-/target
-/data
+.gradle
+.idea
+build
+src/**/*.txt
