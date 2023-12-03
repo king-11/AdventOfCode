@@ -14,9 +14,9 @@ Advent of Code is a registered trademark in the United States.
 
 ## Story
 
-Santa's reindeer typically eat regular reindeer food, but they need a lot of magical energy to deliver presents on Christmas. For that, their favorite snack is a special type of star fruit that only grows deep in the jungle. The Elves have brought you on their annual expedition to the grove where the fruit grows.
+Something is wrong with global snow production, and you've been selected to take a look. The Elves have even given you a map; on it, they've used stars to mark the top fifty locations that are likely to be having problems.
 
-To supply enough magical energy, the expedition needs to retrieve a minimum of fifty stars by December 25th. Although the Elves assure you that the grove has plenty of fruit, you decide to grab any fruit you see along the way, just in case.
+You've been doing this long enough to know that to restore snow operations, you need to check all fifty stars by December 25th.
 
 Collect stars by solving puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!
 
@@ -24,19 +24,3 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day  | Part One | Part Two |
 |---|:---:|:---:|
-| ✔ [Day 1: Calorie Counting](https://github.com/king-11/AdventOfCode/tree/main/src/day1.rs)| 🌟 | 🌟 |
-| ✔ [Day 2: Rock Paper Scissors](https://github.com/king-11/AdventOfCode/tree/main/src/day2.rs)| 🌟 | 🌟 |
-| ✔ [Day 3: Rucksack Reorganization](https://github.com/king-11/AdventOfCode/tree/main/src/day3.rs)| 🌟 | 🌟 |
-| ✔ [Day 4: Camp Cleanup](https://github.com/king-11/AdventOfCode/tree/main/src/day4.rs)| 🌟 | 🌟 |
-| ✔ [Day 5: Supply Stacks](https://github.com/king-11/AdventOfCode/tree/main/src/day5.rs)| 🌟 | 🌟 |
-| ✔ [Day 6: Tuning Trouble](https://github.com/king-11/AdventOfCode/tree/main/src/day6.rs)| 🌟 | 🌟 |
-| ✔ [Day 7: No Space Left On Device](https://github.com/king-11/AdventOfCode/tree/main/src/day7.rs)| 🌟 | 🌟 |
-| ✔ [Day 8: Treetop Tree House](https://github.com/king-11/AdventOfCode/tree/main/src/day8.rs)| 🌟 | 🌟 |
-| ✔ [Day 9: Rope Bridge](https://github.com/king-11/AdventOfCode/tree/main/src/day9.rs)| 🌟 | 🌟 |
-| ✔ [Day 10: Cathode-Ray Tube](https://github.com/king-11/AdventOfCode/tree/main/src/day10.rs)| 🌟 | 🌟 |
-| ✔ [Day 11: Monkey in the Middle](https://github.com/king-11/AdventOfCode/tree/main/src/day11.rs)| 🌟 | 🌟 |
-| ✔ [Day 12: Hill Climbing Algorithm](https://github.com/king-11/AdventOfCode/tree/main/src/day12.rs)| 🌟 | 🌟 |
-| ✔ [Day 13: Distress Signal](https://github.com/king-11/AdventOfCode/tree/main/src/day13.rs)| 🌟 | 🌟 |
-| ✔ [Day 14: Regolith Reservoir](https://github.com/king-11/AdventOfCode/tree/main/src/day14.rs)| 🌟 | 🌟 |
-| ✔ [Day 15: Beacon Exclusion Zone](https://github.com/king-11/AdventOfCode/tree/main/src/day15.rs)| 🌟 | 🌟 |
-| ✔ [Day 16: Proboscidea Volcanium](https://github.com/king-11/AdventOfCode/tree/main/src/day16.rs)| 🌟 | 🌟 |
