@@ -2,7 +2,6 @@
 Advent of Code 2023 🎄 Kotlin Solutions by
 `@king-11` 😊 [Twitter](https://twitter.com/1108King) | [Github](https://github.com/king-11) | [Instagram](https://instagram.com/cryptic_sniper)
 
-
 ## What is Advent of Code?
 [Advent of Code](http://adventofcode.com) is an online event created by [Eric Wastl](https://twitter.com/ericwastl). Each year, starting on Dec 1st, an advent calendar of small programming puzzles are unlocked once a day at midnight (EST/UTC-5). Developers of all skill sets are encouraged to solve them in any programming language they choose!
 
@@ -22,5 +21,14 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 ## My Solutions
 
-| Day  | Part One | Part Two |
-|---|:---:|:---:|
+| Day                                                      | Part One | Part Two |
+|----------------------------------------------------------|:--------:|:--------:|
+| [Day 1: Trebuchet?!](./src/Day01.kt)                     |    🌟    |    🌟    |
+| [Day 2: Cube Conundrum](./src/Day02.kt)                  |    🌟    |    🌟    |
+| [Day 3: Gear Ratios](./src/Day03.kt)                     |    🌟    |    🌟    |
+| [Day 4: Scratchcards](./src/Day04.kt)                    |    🌟    |    🌟    |
+| [Day 5: If You Give A Seed A Fertilizer](./src/Day05.kt) |    🌟    |          |
+| [Day 6: Wait For It](./src/Day03.kt)                     |    🌟    |    🌟    |
+| [Day 7: Camel Cards](./src/Day03.kt)                     |    🌟    |    🌟    |
+| Day 8: Haunted Wasteland                                 |          |          |
+| [Day 9: Mirage Maintenance](./src/Day03.kt)              |    🌟    |    🌟    |
