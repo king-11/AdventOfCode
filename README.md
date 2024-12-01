@@ -21,5 +21,6 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 ## My Solutions
 
-| Day                                                      | Part One | Part Two |
-|----------------------------------------------------------|:--------:|:--------:|
+| Day                                                         | Part One | Part Two |
+|-------------------------------------------------------------|:--------:|:--------:|
+| [Day 1: Historian Hysteria](./lib/advent_of_code/day_01.ex) |    🌟    |    🌟    |
