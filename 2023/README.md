@@ -13,7 +13,22 @@ Advent of Code is a registered trademark in the United States.
 
 ## Story
 
+Something is wrong with global snow production, and you've been selected to take a look. The Elves have even given you a map; on it, they've used stars to mark the top fifty locations that are likely to be having problems.
+
+You've been doing this long enough to know that to restore snow operations, you need to check all fifty stars by December 25th.
+
+Collect stars by solving puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!
+
 ## My Solutions
 
 | Day                                                      | Part One | Part Two |
 |----------------------------------------------------------|:--------:|:--------:|
+| [Day 1: Trebuchet?!](./src/Day01.kt)                     |    🌟    |    🌟    |
+| [Day 2: Cube Conundrum](./src/Day02.kt)                  |    🌟    |    🌟    |
+| [Day 3: Gear Ratios](./src/Day03.kt)                     |    🌟    |    🌟    |
+| [Day 4: Scratchcards](./src/Day04.kt)                    |    🌟    |    🌟    |
+| [Day 5: If You Give A Seed A Fertilizer](./src/Day05.kt) |    🌟    |          |
+| [Day 6: Wait For It](./src/Day06.kt)                     |    🌟    |    🌟    |
+| [Day 7: Camel Cards](./src/Day07.kt)                     |    🌟    |    🌟    |
+| Day 8: Haunted Wasteland                                 |          |          |
+| [Day 9: Mirage Maintenance](./src/Day09.kt)              |    🌟    |    🌟    |
