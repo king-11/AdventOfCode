@@ -25,3 +25,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 |-------------------------------------------------------------|:--------:|:--------:|
 | [Day 1: Historian Hysteria](./lib/advent_of_code/day_01.ex) |    🌟    |    🌟    |
 | [Day 2: Red-Nosed Reports](./lib/advent_of_code/day_02.ex)  |    🌟    |    🌟    |
+| [Day 3: Mull It Over](./lib/advent_of_code/day_03.ex)       |    🌟    |    🌟    |
