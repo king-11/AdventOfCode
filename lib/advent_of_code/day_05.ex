@@ -24,7 +24,7 @@ defmodule AdventOfCode.Day05 do
     rules
     |> Enum.reduce({nil, Map.new()}, fn {a, b}, {_, map} ->
       Map.get_and_update(map, a, fn current_list ->
-        if current_list == nil, do: {nil, [b]}, else: {current_list, current_list ++ [b]}
+        if current_list == nil, do: {nil, [b]}, else: {current_list, [b | current_list]}
       end)
     end)
     |> elem(1)
@@ -62,24 +62,42 @@ defmodule AdventOfCode.Day05 do
 
   def part1(input) do
     %{:rules => rules, :updates => updates} = parse_input(input)
-    adjaceny_list = create_adjaceny_list(rules)
+    adjacency_list = create_adjaceny_list(rules)
 
     updates
-    |> Enum.map(fn update -> {update, create_topological(adjaceny_list, update)} end)
-    |> Enum.filter(fn {update, g} -> correct_order?(update, g) end)
-    |> Enum.map(fn {update, _} -> Enum.at(update, div(length(update), 2)) end)
-    |> Enum.sum()
+    |> Task.async_stream(fn update ->
+      topological_sort = create_topological(adjacency_list, update)
+
+      if correct_order?(update, topological_sort) do
+        Enum.at(update, div(length(update), 2))
+      else
+        0
+      end
+    end)
+    |> Enum.reduce(0, fn
+      {:ok, value}, acc -> acc + value
+      _, acc -> acc
+    end)
   end
 
   def part2(input) do
     %{:rules => rules, :updates => updates} = parse_input(input)
-    adjaceny_list = create_adjaceny_list(rules)
+    adjacency_list = create_adjaceny_list(rules)
 
     updates
-    |> Enum.map(fn update -> {update, create_topological(adjaceny_list, update)} end)
-    |> Enum.filter(fn {update, g} -> !correct_order?(update, g) end)
-    |> Enum.map(fn {update, g} -> order_by_topology(update, g) end)
-    |> Enum.map(fn sorted_update -> Enum.at(sorted_update, div(length(sorted_update), 2)) end)
-    |> Enum.sum()
+    |> Task.async_stream(fn update ->
+      topological_sort = create_topological(adjacency_list, update)
+
+      if !correct_order?(update, topological_sort) do
+        sorted_update = order_by_topology(update, topological_sort)
+        Enum.at(sorted_update, div(length(sorted_update), 2))
+      else
+        0
+      end
+    end)
+    |> Enum.reduce(0, fn
+      {:ok, value}, acc when is_integer(value) -> acc + value
+      _, acc -> acc
+    end)
   end
 end
