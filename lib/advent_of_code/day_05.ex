@@ -1,6 +1,7 @@
 defmodule AdventOfCode.Day05 do
   require Graph
 
+  @spec parse_input(String.t()) :: %{rules: [{integer(), integer()}], updates: [[integer()]]}
   defp parse_input(input) do
     String.split(input, "\n\n", trim: true)
     |> then(fn [raw_rules, raw_updates] ->
@@ -20,6 +21,7 @@ defmodule AdventOfCode.Day05 do
     end)
   end
 
+  @spec create_adjaceny_list([{integer(), integer()}]) :: %{integer() => [integer()]}
   defp create_adjaceny_list(rules) do
     rules
     |> Enum.reduce({nil, Map.new()}, fn {a, b}, {_, map} ->
@@ -30,6 +32,7 @@ defmodule AdventOfCode.Day05 do
     |> elem(1)
   end
 
+  @spec create_topological(%{integer() => [integer()]}, [integer()]) :: %{integer() => integer()}
   defp create_topological(adjaceny_list, update) do
     existing_nodes = Enum.reduce(update, Map.new(), fn a, map -> Map.put(map, a, nil) end)
 
@@ -51,15 +54,18 @@ defmodule AdventOfCode.Day05 do
     |> Enum.reduce(Map.new(), fn {a, idx}, map -> Map.put(map, a, idx) end)
   end
 
+  @spec correct_order?([integer()], %{integer() => integer()}) :: boolean()
   defp correct_order?(order, topological_sort),
     do: order == order_by_topology(order, topological_sort)
 
+  @spec order_by_topology([integer()], %{integer() => integer()}) :: [integer()]
   defp order_by_topology(order, topological_sort) do
     Enum.map(order, fn val -> {val, Map.get(topological_sort, val)} end)
     |> List.keysort(1)
     |> Enum.map(fn {val, _} -> val end)
   end
 
+  @spec part1(String.t()) :: integer()
   def part1(input) do
     %{:rules => rules, :updates => updates} = parse_input(input)
     adjacency_list = create_adjaceny_list(rules)
@@ -80,6 +86,7 @@ defmodule AdventOfCode.Day05 do
     end)
   end
 
+  @spec part1(String.t()) :: integer()
   def part2(input) do
     %{:rules => rules, :updates => updates} = parse_input(input)
     adjacency_list = create_adjaceny_list(rules)
