@@ -1,0 +1,36 @@
+defmodule AdventOfCode.Day08Test do
+  use ExUnit.Case, async: true
+
+  import AdventOfCode.Day08
+
+  setup do
+    [
+      input: """
+      ............
+      ........0...
+      .....0......
+      .......0....
+      ....0.......
+      ......A.....
+      ............
+      ............
+      ........A...
+      .........A..
+      ............
+      ............
+      """
+    ]
+  end
+
+  test "part1", %{input: input} do
+    result = part1(input)
+
+    assert result == 14
+  end
+
+  test "part2", %{input: input} do
+    result = part2(input)
+
+    assert result == 34
+  end
+end

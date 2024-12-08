@@ -21,12 +21,13 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 ## My Solutions
 
-| Day                                                         | Part One | Part Two |
-|-------------------------------------------------------------|:--------:|:--------:|
-| [Day 1: Historian Hysteria](./lib/advent_of_code/day_01.ex) |    🌟    |    🌟    |
-| [Day 2: Red-Nosed Reports](./lib/advent_of_code/day_02.ex)  |    🌟    |    🌟    |
-| [Day 3: Mull It Over](./lib/advent_of_code/day_03.ex)       |    🌟    |    🌟    |
-| [Day 4: Ceres Search](./lib/advent_of_code/day_04.ex)       |    🌟    |    🌟    |
-| [Day 5: Print Queue](./lib/advent_of_code/day_05.ex)        |    🌟    |    🌟    |
-| [Day 6: Guard Gallivant](./lib/advent_of_code/day_06.ex)    |    🌟    |          |
-| [Day 7: Bridge Repair](./lib/advent_of_code/day_07.ex)      |    🌟    |    🌟    |
+| Day                                                                 | Part One | Part Two |
+|---------------------------------------------------------------------|:--------:|:--------:|
+| [Day 1: Historian Hysteria](./lib/advent_of_code/day_01.ex)         |    🌟    |    🌟    |
+| [Day 2: Red-Nosed Reports](./lib/advent_of_code/day_02.ex)          |    🌟    |    🌟    |
+| [Day 3: Mull It Over](./lib/advent_of_code/day_03.ex)               |    🌟    |    🌟    |
+| [Day 4: Ceres Search](./lib/advent_of_code/day_04.ex)               |    🌟    |    🌟    |
+| [Day 5: Print Queue](./lib/advent_of_code/day_05.ex)                |    🌟    |    🌟    |
+| [Day 6: Guard Gallivant](./lib/advent_of_code/day_06.ex)            |    🌟    |          |
+| [Day 7: Bridge Repair](./lib/advent_of_code/day_07.ex)              |    🌟    |    🌟    |
+| [Day 8: Resonant Collinearity](./lib/advent_of_code/day_08.ex)      |    🌟    |    🌟    |
