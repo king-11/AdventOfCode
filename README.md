@@ -29,3 +29,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | [Day 4: Ceres Search](./lib/advent_of_code/day_04.ex)       |    🌟    |    🌟    |
 | [Day 5: Print Queue](./lib/advent_of_code/day_05.ex)        |    🌟    |    🌟    |
 | [Day 6: Guard Gallivant](./lib/advent_of_code/day_06.ex)    |    🌟    |          |
+| [Day 7: Bridge Repair](./lib/advent_of_code/day_07.ex)      |    🌟    |    🌟    |
