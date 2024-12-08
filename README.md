@@ -7,11 +7,22 @@ Advent of Code 2024 🎄 Elixir Solutions by
 
 You don't need a computer science background to participate - just a little programming knowledge and some problem solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.
 
-If you'd like to support Advent of Code, you can do so indirectly by helping to [Share](https://adventofcode.com/2020/about) it with others, or directly via [PayPal](https://www.paypal.com/webapps/shoppingcart?flowlogging_id=482758c113636&mfid=1607161233294_482758c113636#/checkout/openButton) or [Coinbase](https://adventofcode.com/2020/support/coinbase).
+## History
 
-Advent of Code is a registered trademark in the United States.
+I have been doing Advent of Code since **2020** when I first heard about during the period of *COVID*. Since then every year I try to learn a **new language** by doing AoC.
 
-## Story
+>Learning new language is not about just adding one more language into my belt but for me its more about identifying patterns that can be used across them and appreciating each one.
+
+| Year | Programming Language | Stars |
+|:----:|:--------------------:|:-----:|
+| [2020](./2020) | Node JS | 27 |
+| [2021](./2021) | Go | 37 |
+| [2022](./2022) | Rust | 33 |
+| [2023](./2023) | Kotlin | 15 |
+
+I am doing a full time job now so it becomes a little difficult to find time everyday to do these problems but heck I am gonna try my best because I enjoy this festive problem solving.
+
+## Story of 2024
 
 The Chief Historian is always present for the big Christmas sleigh launch, but nobody has seen him in months! Last anyone heard, he was visiting locations that are historically significant to the North Pole; a group of Senior Historians has asked you to accompany them as they check the places they think he was most likely to visit.
 
