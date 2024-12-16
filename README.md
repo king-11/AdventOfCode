@@ -42,3 +42,5 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | [Day 6: Guard Gallivant](./lib/advent_of_code/day_06.ex)            |    🌟    |          |
 | [Day 7: Bridge Repair](./lib/advent_of_code/day_07.ex)              |    🌟    |    🌟    |
 | [Day 8: Resonant Collinearity](./lib/advent_of_code/day_08.ex)      |    🌟    |    🌟    |
+| Day 9: Disk Fragmenter                                              |          |          |
+| [Day 10: Resonant Collinearity](./lib/advent_of_code/day_10.ex)     |    🌟    |    🌟    |
