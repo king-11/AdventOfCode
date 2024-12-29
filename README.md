@@ -45,3 +45,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | [Day 9: Disk Fragmenter](./lib/advent_of_code/day_09.py)            |    🌟    |    🌟    |
 | [Day 10: Resonant Collinearity](./lib/advent_of_code/day_10.ex)     |    🌟    |    🌟    |
 | [Day 11: Plutonian Pebbles](./lib/advent_of_code/day_11.ex)         |    🌟    |    🌟    |
+| [Day 12: Garden Groups](./lib/advent_of_code/day_12.ex)             |    🌟    |    🌟    |
