@@ -24,7 +24,10 @@ defmodule AdventOfCode.MixProject do
       {:httpoison, "~> 2.0"},
       {:benchee, "~> 1.3"},
       {:tz, "~> 0.26.5"},
-      {:libgraph, "~> 0.16.0"}
+      {:libgraph, "~> 0.16.0"},
+      {:pex, "~> 0.3.0"},
+      {:arrays, "~> 2.1.1"},
+      {:nx, "~> 0.9.2"}
     ]
   end
 end
