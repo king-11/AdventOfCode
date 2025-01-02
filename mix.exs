@@ -27,7 +27,8 @@ defmodule AdventOfCode.MixProject do
       {:libgraph, "~> 0.16.0"},
       {:pex, "~> 0.3.0"},
       {:arrays, "~> 2.1.1"},
-      {:nx, "~> 0.9.2"}
+      {:nx, "~> 0.9.2"},
+      {:math, "~> 0.7.0"}
     ]
   end
 end
